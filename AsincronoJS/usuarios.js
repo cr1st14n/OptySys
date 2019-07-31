@@ -379,5 +379,15 @@ $.getJSON("url", data,
     }
 );
 
+$.ajax({
+    type: "",
+    url: "",
+    data: "",
+    dataType: "",
+    success: function (response) {
+        
+    }
+});
+
 
 
