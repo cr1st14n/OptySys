@@ -115,11 +115,41 @@
                         </div>
                         <div class="row clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <label for="apPaterno">Apellidos</label>
+                                <label for="apPaterno">Apellidos Paterno</label>
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8">
                                 <div class="form-group">
                                     <input type="text" id="apellido" class="form-control " placeholder="..." required pattern="[A-Za-z\s]+" oninput="validar('apellido')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label for="apPaterno">Apellidos Materno</label>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-8">
+                                <div class="form-group">
+                                    <input type="text" id="apellido2" class="form-control " placeholder="..."  pattern="[A-Za-z\s]+" oninput="validar('apellido2')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-3 col-md-2 col-sm-4 form-control-label">
+                                <label for="apPaterno">Fecha nacimiento</label>
+                            </div>
+                            <div class="col-lg-9 col-md-10 col-sm-8">
+                                <div class="form-group">
+                                    <input type="date" id="fechaNacimiento" class="form-control " placeholder="..." required oninput="validar('fechaNacimiento')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label for="apPaterno">Telefono  Celular </label>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-8">
+                                <div class="form-group">
+                                    <input type="text" id="TelfCel" class="form-control " placeholder="..." required pattern="[0-9]+" oninput="validar('TelfCel')">
                                 </div>
                             </div>
                         </div>
@@ -171,6 +201,36 @@
                             <div class="col-lg-10 col-md-10 col-sm-8">
                                 <div class="form-group">
                                     <input type="text" id="apellido_update" class="form-control " placeholder="..."  pattern="[A-Za-z\s]+" oninput="validar('apPaterno_update')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label for="apPaterno">Apellidos Materno</label>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-8">
+                                <div class="form-group">
+                                    <input type="text" id="apellido2_update" class="form-control " placeholder="..."  pattern="[A-Za-z\s]+" oninput="validar('apellido2_update')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-3 col-md-2 col-sm-4 form-control-label">
+                                <label for="apPaterno">Fecha nacimiento</label>
+                            </div>
+                            <div class="col-lg-9 col-md-10 col-sm-8">
+                                <div class="form-group">
+                                    <input type="date" id="fechaNacimiento_update" class="form-control " placeholder="..." required oninput="validar('fechaNacimiento_update')">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label for="apPaterno">Telefono  Celular </label>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-8">
+                                <div class="form-group">
+                                    <input type="text" id="TelfCel_update" class="form-control " placeholder="..." required pattern="[0-9]+" oninput="validar('TelfCel_update')">
                                 </div>
                             </div>
                         </div>

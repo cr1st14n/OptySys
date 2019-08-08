@@ -5,7 +5,7 @@ $(function() {
     $('#btnActualizarrUsuario').on('click', updateUser);
 });
 // listUser();
-setTimeout(() => {listUser();}, 2000);
+setTimeout(() => {listUser();}, 500);
 function validar(id) {
     var elemento = document.getElementById(id);
     if (elemento.checkValidity()) {
@@ -373,21 +373,6 @@ function borrar(params) {
     setTimeout(() => {mostrar();}, 2000);
 
 }
-$.getJSON("url", data,
-    function (data, textStatus, jqXHR) {
-        
-    }
-);
-
-$.ajax({
-    type: "",
-    url: "",
-    data: "",
-    dataType: "",
-    success: function (response) {
-        
-    }
-});
 
 
 

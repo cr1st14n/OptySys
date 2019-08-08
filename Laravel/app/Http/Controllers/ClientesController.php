@@ -26,6 +26,9 @@ class ClientesController extends Controller
             $client->vent_clienteNit=$request->input("ciNit");
             $client->vent_clienteNombre=$request->input("nombre");
             $client->vent_clienteApellido=$request->input("apellido");
+            $client->vent_clienteApellido2=$request->input("apellido2");
+            $client->clie_fechNac=$request->input("fechNac");
+            $client->clie_telf=$request->input("telf");
 
             $rev = $client->save();
             if ($rev){
@@ -66,6 +69,9 @@ class ClientesController extends Controller
                 'vent_clienteNit'=>$request->input("ci"),
                 'vent_clienteNombre'=>$request->input("nombre"),
                 'vent_clienteApellido'=>$request->input("apellido"),
+                'vent_clienteApellido2'=>$request->input("apellido2"),
+                'clie_fechNac'=>$request->input("fechNac"),
+                'clie_telf'=>$request->input("telf"),
 
                 'ca_cod_usu'=>Auth::user()->usu_ci,
                 'ca_tipo'=>"update",

@@ -39,8 +39,8 @@ class HomeController extends Controller
         $pendientes=atencion::where('aten_estadoPago',0)->count();
         $dateMes=Carbon::now()->format('m');
         $dateDia=Carbon::now()->format('d');
-        $clieDescuento=clientes::whereDay('usu_fechNac',$dateDia)
-                                    ->whereMonth('usu_fechNac',$dateMes)->count();
+        $clieDescuento=clientes::whereDay('clie_fechNac',$dateDia)
+                                    ->whereMonth('clie_fechNac',$dateMes)->count();
         return view('homeSystema')
             ->with("user",$usuarios)
             ->with("userDescuento",$clieDescuento)

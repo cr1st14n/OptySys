@@ -38,15 +38,21 @@ function registrarCliente() {
     var ciNitV = document.getElementById('ci_nit').checkValidity();
     var nomV = document.getElementById('nombre').checkValidity();
     var apeV = document.getElementById('apellido').checkValidity();
+    var ape2V = document.getElementById('apellido2').checkValidity();
+    var fechNacV = document.getElementById('apellido').checkValidity();
+    var telfV = document.getElementById('apellido').checkValidity();
 
     var ciNit = $("#ci_nit").val();
     var nom = $('#nombre').val();
     var ape = $('#apellido').val();
-    if (ciNitV && nomV && apeV) {
+    var ape2 = $('#apellido2').val();
+    var fechNac = $('#fechaNacimiento').val();
+    var telf = $('#TelfCel').val();
+    if (ciNitV && nomV && apeV &&fechNacV&&telfV&&ape2V) {
         var url = '/adm/clientes/create';
         var datos = {
             '_token': $('meta[name=csrf-token]').attr('content'),
-            'ciNit': ciNit, 'nombre': nom, 'apellido': ape};
+            'ciNit': ciNit, 'nombre': nom, 'apellido': ape,'apellido2': ape2,'fechNac':fechNac,'telf':telf};
         $.post(url, datos).done(function (data) {
             if (data == "creado") {
                 // console.log("usu creado");
@@ -77,6 +83,9 @@ function editarCliente(id) {
         $("#ci_update").val(data.vent_clienteNit);
         $("#nombre_update").val(data.vent_clienteNombre);
         $("#apellido_update").val(data.vent_clienteApellido);
+        $("#apellido2_update").val(data.vent_clienteApellido2);
+        $("#fechaNacimiento_update").val(data.clie_fechNac);
+        $("#TelfCel_update").val(data.clie_telf);
         $("#ModalUpdateCliente").modal('show');
     }).fail(function () {
         alertify.error("ERROR SERVER STORE CLIENTE");
@@ -87,16 +96,22 @@ function updateCliente() {
     var ciV = document.getElementById('ci_update').checkValidity();
     var nomV = document.getElementById('nombre_update').checkValidity();
     var apeV = document.getElementById('apellido_update').checkValidity();
+    var ape2V = document.getElementById('apellido2_update').checkValidity();
+    var fechNacV = document.getElementById('fechaNacimiento_update').checkValidity();
+    var telfV = document.getElementById('TelfCel_update').checkValidity();
 
     var id = document.getElementById('id_updater_clie').value;
     var ci = document.getElementById('ci_update').value;
     var nom = document.getElementById('nombre_update').value;
     var ape = document.getElementById('apellido_update').value;
-    if (idV && ciV && nomV && apeV)
+    var ape2 = document.getElementById('apellido2_update').value;
+    var fechNac = document.getElementById('fechaNacimiento_update').value;
+    var telf = document.getElementById('TelfCel_update').value;
+    if (idV && ciV && nomV && apeV&&ape2V&&fechNacV&&telfV)
     {
         var url = "/adm/clientes/update";
         var datos= {'_token': $('meta[name=csrf-token]').attr('content'),
-            'id':id,'ci':ci,'nombre':nom,'apellido':ape};
+            'id':id,'ci':ci,'nombre':nom,'apellido':ape,'apellido2':ape2,'fechNac':fechNac,'telf':telf};
         $.post(url,datos).done(function (data) {
             console.log(data);
             if (data == "creado"){
