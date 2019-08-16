@@ -41,9 +41,12 @@ class HomeController extends Controller
         $dateDia=Carbon::now()->format('d');
         $clieDescuento=clientes::whereDay('clie_fechNac',$dateDia)
                                     ->whereMonth('clie_fechNac',$dateMes)->count();
+        $clieDescuentoNombre=clientes::whereDay('clie_fechNac',$dateDia)
+                                    ->whereMonth('clie_fechNac',$dateMes)->get();
         return view('homeSystema')
             ->with("user",$usuarios)
             ->with("userDescuento",$clieDescuento)
+            ->with("clieDescuentoNombre",$clieDescuentoNombre)
             ->with("clientes",$clientes)
             ->with("ventas",$ventas)
             ->with("pendientes",$pendientes);

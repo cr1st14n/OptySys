@@ -19,6 +19,7 @@
         </div>
         <div class="container-fluid">
             <div class="row clearfix">
+                @if(Auth::User()->usu_cargo=="Administrador")
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card widget_2 big_icon zmdi-account">
                         <div class="body">
@@ -43,6 +44,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card widget_2 big_icon zmdi-shopping-cart">
                         <div class="body">
@@ -70,12 +72,9 @@
                 <div class="col-lg-3 col-md-6 col-sm-12" id="clientesDescuento">
                     <div class="card widget_2 big_icon zmdi-shopping-cart-plus">
                         <div class="body">
-                            <h6>Clientes con descuento</h6>
+                            <h6>Descuentos</h6>
                             <h2>{{$userDescuento}} <small class="info">Clientes</small></h2>
-                            <!-- <small>Total Registered Domain</small> -->
-                            <div class="progress">
-                                <div class="progress-bar l-green" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%;"></div>
-                            </div>
+                            <button class="btn btn-block btn-info btn-sm">Clientes con Descuento</button>
                         </div>
                     </div>
                 </div>
@@ -116,31 +115,21 @@
                                     <table class="table m-b-0">
                                         <thead class="thead-light">
                                             <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
+                                            <th scope="col"># Carnet</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Apellidos</th>
+                                            <th scope="col">Motivo descuento</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($clieDescuentoNombre as $clie)
                                             <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                                <th scope="row">{{$clie->vent_clienteNit}}</th>
+                                                <td>{{$clie->vent_clienteNombre}}</td>
+                                                <td>{{$clie->vent_clienteApellido}} {{$clie->vent_clienteApellido2}}</td>
+                                                <td>Cumpleaños</td>
                                             </tr>
-                                            <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

@@ -48,28 +48,6 @@
                                     </tr>
                                     </thead>
                                     <tbody id="listUser">
-                                   <!--  {{--@foreach($listUsers as $user)--}}
-                                        {{--<tr>--}}
-                                            {{--<th scope="row">Usu-{{$user->id}}</th>--}}
-                                            {{--<td>{{$user->usu_nombre}} {{$user->usu_appaterno}} {{$user->usu_apmaterno}}</td>--}}
-                                            {{--<td>{{$user->usu_ci}}</td>--}}
-                                            {{--<td>{{$user->usu_cargo}}</td>--}}
-                                            {{--@if($user->usu_acceso == 1)--}}
-                                            {{--<td><span class="col-green">Permitido</span></td>--}}
-                                            {{--@else--}}
-                                            {{--<td><span class="col-red">Denegado</span></td>--}}
-                                            {{--@endif--}}
-                                            {{--<td>--}}
-                                                {{--@if($user->usu_acceso == 1)--}}
-                                                    {{--<button class="btn btn-default waves-effect waves-float btn-sm waves-green" onclick="accesoUser({{$user->id}});"><i class="zmdi zmdi-lock-open"></i></button>--}}
-                                                {{--@else--}}
-                                                    {{--<button class="btn btn-default waves-effect waves-float btn-sm waves-green" onclick="accesoUser({{$user->id}});"><i class="zmdi zmdi-lock"></i></button>--}}
-                                                {{--@endif--}}
-                                                {{--<button class="btn btn-default waves-effect waves-float btn-sm waves-green" onclick="actualizarUser({{$user->id}});"><i class="zmdi zmdi-edit"></i></button>--}}
-                                                {{--<button class="btn btn-default waves-effect waves-float btn-sm waves-red" onclick="eliminarUsuario({{$user->id}});"><i class="zmdi zmdi-delete"></i></button>--}}
-                                            {{--</td>--}}
-                                        {{--</tr>--}}
-                                    {{--@endforeach--}} -->
                                     </tbody>
                                 </table>
                             </div>

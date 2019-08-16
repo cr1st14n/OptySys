@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped " id="listClie1">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable" id="listClie1">
                                     <thead>
                                     <tr>
                                         <th>Cod</th>
@@ -61,18 +61,6 @@
                                     </tr>
                                     </thead>
                                     <tbody id="listclie">
-                                    {{--@foreach($clientes as $clie)
-                                        <tr>
-                                            <th scope="row">Clie-{{$clie->id}}</th>
-                                            <td>{{$clie->vent_clienteNombre}} {{$clie->vent_clienteApellido}} </td>
-                                            <td>{{$clie->vent_clienteNit}}</td>
-
-                                            <td>
-                                                <button class="btn btn-default waves-effect waves-float btn-sm waves-green" onclick="editarCliente({{$clie->id}});"><i class="zmdi zmdi-edit"></i></button>
-                                                <button class="btn btn-default waves-effect waves-float btn-sm waves-red" onclick="eliminarCliente({{$clie->id}});"><i class="zmdi zmdi-delete"></i></button>
-                                            </td>
-                                        </tr>
-                                    @endforeach--}}
                                     </tbody>
                                 </table>
                             </div>
@@ -153,13 +141,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success btn-round waves-effect" id="btnRegistrarCliente">Registrar</button>
+                        </div>
                     </form>
                 </div>
 
-                <div class="modal-footer">
-                    {{--<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>--}}
-                    <button type="button" class="btn btn-success btn-round waves-effect" id="btnRegistrarCliente">Registrar</button>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -172,7 +160,7 @@
                     <h4 class="title" id="defaultModalLabel">Actualizar datos</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="formUpdate-cliente">
                         <div class="row clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                 <label for="ci">Numero CI</label>
@@ -230,18 +218,16 @@
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8">
                                 <div class="form-group">
-                                    <input type="text" id="TelfCel_update" class="form-control " placeholder="..." required pattern="[0-9]+" oninput="validar('TelfCel_update')">
+                                    <input type="text" id="TelfCel_update" class="form-control " placeholder="..." required pattern="[0-9]+" oninput="validar('TelfCel_update')" maxlength="15">
                                 </div>
                             </div>
                         </div>
-                        <hr>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success btn-round waves-effect" id="btnActualizarCliente">Actualizar Datos</button>
+                        </div>
                     </form>
                 </div>
 
-                <div class="modal-footer">
-                    {{--<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>--}}
-                    <button type="button" class="btn btn-success btn-round waves-effect" id="btnActualizarCliente">Actualizar Datos</button>
-                </div>
             </div>
         </div>
     </div>
@@ -317,9 +303,9 @@
     </div>
 @endsection
 @section('scrypt')
-    <link rel="stylesheet" href="{{ asset('Plantilla/assets/js/pages/tables/jquery-datatable.js') }}">
+    <link rel="stylesheet" href="{{ asset('Plantilla/assets/bundles/datatablescripts.bundle.js') }}">
     <script src="{{asset('AsincronoJS/clientes.js')}}"></script>
-    <script>
+    <!-- <script>
         $(document).ready(function () {
 
             $('#listClie1').DataTable({
@@ -340,5 +326,5 @@
                 }
             });
         });
-    </script>
+    </script> -->
 @endsection

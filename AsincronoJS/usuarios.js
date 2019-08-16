@@ -356,8 +356,6 @@ function tian(par) {
     const casa = `<div> que tal como estas</div> `;
     console.log(casa);
 }
-const tian1 = (title = 'submit')=>html`
-<button title="${title}"> </button>`
 
 function mostrar(params) {
     var a = `<div class="loader-container" style="text-align: center;">

@@ -78,6 +78,7 @@ function registrarCliente() {
     }
 }
 function editarCliente(id) {
+    $('#formUpdate-cliente').trigger("reset");
     $.get('/adm/clientes/edit/'+id+'').done(function (data) {
         $("#id_updater_clie").val(data.id);
         $("#ci_update").val(data.vent_clienteNit);
@@ -158,11 +159,11 @@ function listClientes1(data) {
     var html=data.map(function (elem,index) {
         return(`<tr>
                         <th scope="row">Clie-` + elem.id + `</th>
-                        <td>`+elem.vent_clienteNombre+` ${VN(elem.vent_clienteApellido)} </td>
+                        <td>`+elem.vent_clienteNombre+` ${VN(elem.vent_clienteApellido)} ${VN(elem.vent_clienteApellido2) }</td>
                         <td>`+elem.vent_clienteNit+`</td>
                         <td>
                             <button class="btn btn-default waves-effect waves-float btn-sm waves-green" onclick="showhistoriaCliente(`+elem.id+`)"><i class="zmdi zmdi-tablet"></i></button>
-                            <button class="btn btn-default waves-effect waves-float btn-sm waves-green" onclick="editarCliente(`+elem.id+`)"><i class="zmdi zmdi-edit"></i></button>
+                            <button class="btn btn-default waves-effect waves-float btn-sm waves-green" onclick="editarCliente(`+elem.id+`)"><i class="zmdi zmdi-library"></i></button>
                             <button class="btn btn-default waves-effect waves-float btn-sm waves-red" onclick="eliminarCliente(`+elem.id+`)"><i class="zmdi zmdi-delete"></i></button>
                         </td>
 		   	        </tr>`);
